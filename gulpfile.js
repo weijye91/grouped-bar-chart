@@ -6,7 +6,7 @@
     var gulp = require('gulp');
     var browserSync = require('browser-sync').create();
 
-    gulp.task('browser-sync', function() {
+    function browserSyncTask() {
         browserSync.init({
             server: {
                 baseDir: './src',
@@ -16,5 +16,14 @@
                 browser: ['internet explorer', 'google chrome']
             }
         });
-    });
+    }
+
+    gulp.task('default', browserSyncTask);
+    gulp.task('browser-sync', browserSyncTask);
+
+    // Trying out browserify builds + watchify.
+    var watchify = require('watchify');
+    var browserify = require('browserify');
+
+    // TODO: To be continue...
 })();
