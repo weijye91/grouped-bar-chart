@@ -1,9 +1,9 @@
-(function() {
+(function(angular) {
     'use strict';
 
     define([
         'angular'
-    ], function(angular) {
+    ], function() {
         // Module declaration. App is the main entry point for the entire app.
         angular.module('app', []);
         // Called the app module.
@@ -20,4 +20,4 @@
             return angular.bootstrap(document, ['app']);
         });
     });
-})();
+})(angular);
