@@ -5,6 +5,8 @@
     'use strict';
     var gulp = require('gulp');
     var browserSync = require('browser-sync').create();
+    var karma = require('karma');
+    var Server = require('karma').Server;
 
     function browserSyncTask() {
         browserSync.init({
@@ -20,6 +22,12 @@
 
     gulp.task('default', browserSyncTask);
     gulp.task('browser-sync', browserSyncTask);
+    gulp.task('test', function (done) {
+	  new Server({
+	    configFile: __dirname + '/karma.conf.js',
+	    singleRun: true
+	  }, done).start();
+	});
 
     // Trying out browserify builds + watchify.
     //var watchify = require('watchify');
