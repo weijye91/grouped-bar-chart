@@ -17,7 +17,16 @@
                 // Not working for some reason....
                 browser: ['internet explorer', 'google chrome']
             }
+        }),
+        browserSync.reload({
+          stream: true   //
         });
+
+        gulp.watch('src/index.html').on('change', browserSync.reload);
+        gulp.watch('src/app.js').on('change', browserSync.reload);
+        gulp.watch('src/**/*.html').on('change', browserSync.reload);
+        gulp.watch('src/**/*.js').on('change', browserSync.reload);
+        gulp.watch('src/*.css').on('change', browserSync.reload);
     }
 
     gulp.task('default', browserSyncTask);
