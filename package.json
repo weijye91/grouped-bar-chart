@@ -17,7 +17,10 @@
     "multiseries",
     "grouped"
   ],
-  "author": "Wei-jye Wang",
+  "author": [
+    "Wei-jye Wang",
+    "Chieh Yie Wong"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/weijye91/grouped-bar-chart/issues"
@@ -26,6 +29,7 @@
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "gulp": "^3.9.0",
-    "karma": "^0.12.37"
+    "karma": "^0.12.37",
+    "watchify": "^3.3.0"
   }
 }

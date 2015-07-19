@@ -22,8 +22,8 @@
     gulp.task('browser-sync', browserSyncTask);
 
     // Trying out browserify builds + watchify.
-    var watchify = require('watchify');
-    var browserify = require('browserify');
+    //var watchify = require('watchify');
+    //var browserify = require('browserify');
 
     // TODO: To be continue...
 })();
