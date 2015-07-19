@@ -30,7 +30,7 @@
     "browser-sync": "^2.7.13",
     "gulp": "^3.9.0",
     "karma": "^0.12.37",
-    "watchify": "^3.3.0"
+    "watchify": "^3.3.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.37",
     "karma-chrome-launcher": "^0.2.0",
