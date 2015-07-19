@@ -5,6 +5,7 @@
     'use strict';
     var gulp = require('gulp');
     var browserSync = require('browser-sync').create();
+    var fs = require('fs');
     var karma = require('karma');
     var Server = require('karma').Server;
 
@@ -15,17 +16,26 @@
                 files: ['index.html', 'app.js', '**/*.html', '**/*.js', '**/*.css'],
                 port: 8000,
                 // Not working for some reason....
-                browser: ['internet explorer', 'google chrome']
+                browser: ['internet explorer', 'google chrome'],
+                logLevel: 'debug'
             }
-        }),
+        });
+
         browserSync.reload({
           stream: true   //
         });
 
-        gulp.watch('src/index.html').on('change', browserSync.reload);
-        gulp.watch('src/app.js').on('change', browserSync.reload);
-        gulp.watch('src/**/*.html').on('change', browserSync.reload);
-        gulp.watch('src/**/*.js').on('change', browserSync.reload);
+        gulp.watch('src/index.html', function(event, file) {
+            browserSync.reload('src/index.html');
+        });
+        gulp.watch('src/app.js', function() {
+            browserSync.reload('src/app.js');
+        });
+        //gulp.watch('src/**/*.js').on('change', browserSync.reload);
+        gulp.watch('src/**/*.js', function(event, file) {
+            console.log('event:', event);
+            // TODO: Extract the relative path from event.path and reload only those files.
+        });
         gulp.watch('src/*.css').on('change', browserSync.reload);
     }
 
