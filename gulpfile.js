@@ -5,7 +5,7 @@
     'use strict';
     var gulp = require('gulp');
     var browserSync = require('browser-sync').create();
-    var fs = require('fs');
+    var path = require('path');
     var karma = require('karma');
     var Server = require('karma').Server;
 
@@ -31,12 +31,13 @@
         gulp.watch('src/app.js', function() {
             browserSync.reload('src/app.js');
         });
-        //gulp.watch('src/**/*.js').on('change', browserSync.reload);
         gulp.watch('src/**/*.js', function(event, file) {
-            console.log('event:', event);
-            // TODO: Extract the relative path from event.path and reload only those files.
+            // Extract the relative path from event.path and reload only those files.
+            browserSync.reload(path.relative(__dirname, event.path));
         });
-        gulp.watch('src/*.css').on('change', browserSync.reload);
+        gulp.watch('src/*.css', function(event, file){
+            browserSync.reload(path.relative(__dirname, event.path));
+        });
     }
 
     gulp.task('default', browserSyncTask);
