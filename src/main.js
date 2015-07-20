@@ -9,7 +9,8 @@
             'd3': 'lib/d3/d3.min',
 
             // Our own written modules.
-            'groupedBarChart': 'components/groupedBarChart'
+            'groupedBarChart': 'components/groupedBarChart/groupedBarChart',
+            'bar': 'modules/bar/bar'
         },
 
         // Define dependencies here. Code Example:
