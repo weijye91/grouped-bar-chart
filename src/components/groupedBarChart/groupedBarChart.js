@@ -15,13 +15,16 @@
                 if (typeof config.width !== 'number') {throw new Error('config.width must be a number.');}
                 if (config.width < MIN_WIDTH) {throw new Error('config.width must be ' + MIN_WIDTH + ' at minimum.');}
             }
+
             if (config.height) {
                 if (typeof config.height !== 'number') {throw new Error('config.height must be a number.');}
                 if (config.height < MIN_HEIGHT) {throw new Error('config.height must be ' + MIN_HEIGHT + ' at minimum.');}
             }
+
             if (!config.targetedElementID) {
                 throw new Error('config.targetedElementID is undefined.');
             }
+
             if (config.highlightColor) {
                 if (typeof config.highlightColor !== 'string') {throw new Error('config.highlightColor must be a string.');}
             }
@@ -448,7 +451,7 @@
             /***********************************************************
              * Private functions.
              **********************************************************/
-            // Create legend for this chart.
+                // Create legend for this chart.
             myChart.createLegend = function() {
                 legend = legendInit(svg, data);
                 drawLegendBoxes(legend);
