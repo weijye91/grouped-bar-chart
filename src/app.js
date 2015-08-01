@@ -1,23 +1,27 @@
 (function() {
+    'use strict';
+
     define([
         'angular',
         'home',
         'about'
     ], function() {
-        angular.module('app', [
+        var app = angular.module('app', [
             'app.home',
-            'app.about',
+            'about',
             'ngNewRouter'
-        ])
-            .controller('AppController', ['$router', AppController]);
+        ]);
 
-        function AppController($router) {
+        var appControllerInjectables = ['$router'];
+        function appController($router) {
             $router.config([
                 { path: '/', redirectTo: 'home' },
                 { path: '/home', component: 'home' },
-                { path: '/about', component: 'about' },
+                { path: '/about', component: 'about' }
             ]);
         }
+
+        app.controller('appController', appControllerInjectables.concat([appController]));
 
         return angular.bootstrap(document, ['app']); // Manually bootstrap angular, on Dom ready
     });
