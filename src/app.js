@@ -1,4 +1,4 @@
-(function(angular) {
+/*(function(angular) {
     'use strict';
 
     define([
@@ -21,4 +21,23 @@
             return angular.bootstrap(document, ['app']);
         });
     });
-})(angular);
+})(angular);*/
+
+'use strict';
+
+angular.module('app', ['ngNewRouter']);
+
+angular.module('app').controller('AppController', AppController);
+angular.module('app').controller('HomeController', HomeController);
+angular.module('app').controller('AboutController', AboutController);
+
+function AppController() {
+  console.log('AppController instantiated');
+}
+AppController.$routeConfig = [{
+  path: '/home',
+  component: 'home' 
+}, {
+  path: '/about',
+  component: 'about' 
+}];
