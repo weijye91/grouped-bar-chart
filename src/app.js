@@ -18,5 +18,7 @@
                 { path: '/about', component: 'about' },
             ]);
         }
+
+        return angular.bootstrap(document, ['app']); // Manually bootstrap angular, on Dom ready
     });
 })();
