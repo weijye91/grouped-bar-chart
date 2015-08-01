@@ -19,7 +19,7 @@
         // Define dependencies here. Code Example:
         // 'about': ['angular', 'd3']
         shim: {
-            'app': ['angular', 'home', 'about'],
+            //'app': ['angular', 'home', 'about'],
             'angular-new-router': ['angular'],
             'home': ['angular', 'angular-new-router'],
             'about': ['angular', 'angular-new-router'],
