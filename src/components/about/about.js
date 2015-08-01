@@ -1,9 +1,5 @@
-/*angular.module('app.about', [])
+angular.module('app.about', [])
   .controller('AboutController', [function () {
+  	console.log("AboutController Initiated");
     this.name = 'About';
-  }]);*/
-
-function AboutController() {
-  console.log('AboutController instantiated');
-  this.name = 'About';
-}
+  }]);

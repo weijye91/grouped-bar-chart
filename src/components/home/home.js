@@ -1,10 +1,5 @@
-/*angular.module('app.home', [])
+angular.module('app.home', [])
   .controller('HomeController', [function () {
-    this.name = 'Friend';
+  	console.log("HomeController Initiated");
+    this.name = 'Home';
   }]);
-  */
-
-function HomeController() {
-  console.log('HomeController instantiated');
-  this.name = 'Home';
-}
